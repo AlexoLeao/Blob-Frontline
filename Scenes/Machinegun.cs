@@ -3,7 +3,7 @@ using Godot;
 
 namespace BlobFrontlines.Scenes;
 
-public partial class Machinegun : RigidBody2D {
+public partial class Machinegun : Area2D {
 
 	[Export] public PackedScene ProjectileScene { get; set; }
 	[Export] public bool isHolstered = true;

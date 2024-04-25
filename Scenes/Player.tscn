@@ -105,8 +105,7 @@ FireRate = 0.1
 position = Vector2(9, 9)
 
 [node name="Machinegun" parent="." instance=ExtResource("3_fwaln")]
-position = Vector2(16, 7)
-can_sleep = false
+position = Vector2(10, 5)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_x1f4g")

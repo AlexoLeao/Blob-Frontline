@@ -28,9 +28,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="Machinegun" type="RigidBody2D"]
-collision_layer = 2
-collision_mask = 2
+[node name="Machinegun" type="Area2D"]
 script = ExtResource("1_0l2vw")
 ProjectileScene = ExtResource("2_tw1rn")
 
