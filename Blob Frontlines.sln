@@ -1,0 +1,19 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blob Frontlines", "Blob Frontlines.csproj", "{BCE2904C-F745-4067-AE2D-11E5DFB17461}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	ExportDebug|Any CPU = ExportDebug|Any CPU
+	ExportRelease|Any CPU = ExportRelease|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BCE2904C-F745-4067-AE2D-11E5DFB17461}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCE2904C-F745-4067-AE2D-11E5DFB17461}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCE2904C-F745-4067-AE2D-11E5DFB17461}.ExportDebug|Any CPU.ActiveCfg = ExportDebug|Any CPU
+		{BCE2904C-F745-4067-AE2D-11E5DFB17461}.ExportDebug|Any CPU.Build.0 = ExportDebug|Any CPU
+		{BCE2904C-F745-4067-AE2D-11E5DFB17461}.ExportRelease|Any CPU.ActiveCfg = ExportRelease|Any CPU
+		{BCE2904C-F745-4067-AE2D-11E5DFB17461}.ExportRelease|Any CPU.Build.0 = ExportRelease|Any CPU
+	EndGlobalSection
+EndGlobal

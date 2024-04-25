@@ -1,0 +1,60 @@
+[gd_scene load_steps=9 format=3 uid="uid://cw8pqxdtwoghs"]
+
+[ext_resource type="Script" path="res://Scenes/Machinegun.cs" id="1_0l2vw"]
+[ext_resource type="PackedScene" uid="uid://cpc1y6kllg2hg" path="res://Scenes/Projectile.tscn" id="2_tw1rn"]
+[ext_resource type="Texture2D" uid="uid://cdsytuh318gei" path="res://Assets/Custom/Gun_1/Gun1+Hands.png" id="2_wiejp"]
+[ext_resource type="Texture2D" uid="uid://beuvqi4rd3oxw" path="res://Assets/Custom/MuzzleFlash_1/MuzzleFlash1.png" id="3_8y2lb"]
+[ext_resource type="Texture2D" uid="uid://cwhmj1vy2di1m" path="res://Assets/Custom/MuzzleFlash_1/MuzzleFlash2.png" id="4_mnnkg"]
+[ext_resource type="Texture2D" uid="uid://da2f65vksu8bc" path="res://Assets/Custom/MuzzleFlash_1/MuzzleFlash3.png" id="5_rh1wm"]
+[ext_resource type="AudioStream" uid="uid://dgati261rqfwp" path="res://Assets/Sounds/AR10-7.62x51-308-Close-Single-Gunshot-A-www.fesliyanstudios.com.mp3" id="6_xm7eu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kaj6f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8y2lb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mnnkg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rh1wm")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"Shoot",
+"speed": 10.0
+}]
+
+[node name="Machinegun" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_0l2vw")
+ProjectileScene = ExtResource("2_tw1rn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wiejp")
+centered = false
+offset = Vector2(-5.117, -9.411)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -4, 0, 4, 9, 4, 13, 2, 25, 3, 25, -3, 13, -2, 9, -4, 0, -4)
+disabled = true
+
+[node name="Muzzle_Marker" type="Marker2D" parent="."]
+position = Vector2(25.634, 0)
+gizmo_extents = 4.5
+
+[node name="MuzzleFlash" type="AnimatedSprite2D" parent="Muzzle_Marker"]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_kaj6f")
+animation = &"Shoot"
+offset = Vector2(8.493, 0)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_xm7eu")
+volume_db = -10.0
+mix_target = 1
+max_polyphony = 20

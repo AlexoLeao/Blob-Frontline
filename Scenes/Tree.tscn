@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dluw5s8pdctqd"]
+
+[ext_resource type="Texture2D" uid="uid://cgww4ef7d3r1g" path="res://Assets/TopDownTanks/PNG/Retina/treeBrown_large.png" id="1_1p3rt"]
+
+[node name="Tree" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_1p3rt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-10, 0, -7, -7, 0, -10, 7, -7, 10, 0, 7, 7, 0, 10, -7, 7)

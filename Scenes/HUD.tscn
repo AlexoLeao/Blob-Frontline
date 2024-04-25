@@ -1,0 +1,113 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2epes635s76x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2335m"]
+bg_color = Color(0.894118, 0.878431, 0.878431, 1)
+
+[sub_resource type="Theme" id="Theme_ana6r"]
+/styles/color = SubResource("StyleBoxFlat_2335m")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6xds0"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rbb7i"]
+bg_color = Color(0.992157, 0.847059, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxlvt"]
+bg_color = Color(1, 0.160784, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt4mu"]
+bg_color = Color(0.215686, 0.682353, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="HUD" type="Node"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 123.0
+offset_bottom = 107.0
+theme = SubResource("Theme_ana6r")
+
+[node name="StaminaCount" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 98.0
+offset_top = 58.0
+offset_right = 192.0
+offset_bottom = 76.0
+rotation = 1.5708
+scale = Vector2(0.5, 0.4)
+tooltip_text = "Ammo
+"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_6xds0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rbb7i")
+value = 100.0
+show_percentage = false
+
+[node name="AmmoCount" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 119.2
+offset_top = 58.0
+offset_right = 213.2
+offset_bottom = 76.0
+rotation = 1.5708
+scale = Vector2(0.5, 0.4)
+tooltip_text = "Ammo
+"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_6xds0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_xxlvt")
+max_value = 32.0
+value = 32.0
+show_percentage = false
+
+[node name="HealthCount" type="ProgressBar" parent="Control"]
+layout_mode = 0
+offset_left = 109.2
+offset_top = 58.0
+offset_right = 203.2
+offset_bottom = 76.0
+rotation = 1.5708
+scale = Vector2(0.5, 0.4)
+tooltip_text = "Ammo
+"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/background = SubResource("StyleBoxFlat_6xds0")
+theme_override_styles/fill = SubResource("StyleBoxFlat_dt4mu")
+value = 100.0
+show_percentage = false

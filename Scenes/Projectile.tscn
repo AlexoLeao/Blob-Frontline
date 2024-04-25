@@ -1,0 +1,56 @@
+[gd_scene load_steps=7 format=3 uid="uid://cpc1y6kllg2hg"]
+
+[ext_resource type="Texture2D" uid="uid://bj3u1kci5sh17" path="res://Assets/TopDownTanks/PNG/Retina/bulletSand3_outline.png" id="1_5squ8"]
+[ext_resource type="Script" path="res://Scenes/Projectile.cs" id="1_ilx5i"]
+[ext_resource type="Texture2D" uid="uid://c2xuidft2n5sf" path="res://Assets/Custom/RedShot_1/RedShot1.png" id="3_3thay"]
+[ext_resource type="Texture2D" uid="uid://c5ldev18fj8vs" path="res://Assets/Custom/RedShot_1/RedShot2.png" id="4_yunxq"]
+[ext_resource type="Texture2D" uid="uid://qkr24t5frc2k" path="res://Assets/Custom/RedShot_1/RedShot3.png" id="5_d0nx5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbbyj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5squ8")
+}],
+"loop": true,
+"name": &"move_1",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_3thay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yunxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d0nx5")
+}],
+"loop": true,
+"name": &"move_2",
+"speed": 10.0
+}]
+
+[node name="Projectile" type="RigidBody2D"]
+gravity_scale = 0.0
+max_contacts_reported = 1
+contact_monitor = true
+script = ExtResource("1_ilx5i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kbbyj")
+animation = &"move_2"
+frame_progress = 0.545453
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.212375, -0.0343093)
+rotation = 1.5708
+scale = Vector2(2.21786, 3.48978)
+polygon = PackedVector2Array(-1.10497, 1.9393, 1.14622, 1.93176, 1.15805, -1.16306, 0.0442989, -1.88594, -1.08129, -1.18564)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.0331078, -1.19209e-07)
+scale = Vector2(0.0497942, 0.0398616)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
