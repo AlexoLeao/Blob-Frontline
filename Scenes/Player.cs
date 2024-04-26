@@ -5,23 +5,20 @@ namespace BlobFrontlines.Scenes;
 
 public partial class Player : CharacterBody2D {
     
-    private const int WALK = 50;
-    private const int RUN = 75;
-    private const double RUN_TIMEOUT = 4.0;
+    private const int WALK = 75;
+    private const int RUN = 100;
+    private const double RUN_TIMEOUT = 3.5;
     
     [Export] public PackedScene ProjectileScene { get; set; }
     [Export] public PackedScene MachinegunScene { get; set; }
     [Export] public int Health = 100;
     [Export] public int Stamina = 100;
-    [Export] public double StaminaLossRate = 0.5;
-    [Export] public int PlayerSpeed = 50;
+    [Export] public double StaminaLossRate = 0.6;
+    [Export] public int PlayerSpeed = WALK;
     [Export] public double FireRate = 0.2;
-    [Export] public int MagazineSize = 32;
     
 
     private Vector2 _screenSize;
-    private int _rotationDirection;
-    private bool _canFire = true;
     private bool _canRun = true;
     private bool _auxLock = true;
     private ProgressBar _ammoProgressBar;
@@ -59,8 +56,6 @@ public partial class Player : CharacterBody2D {
         
         if (Input.IsActionJustReleased("Reload")) {
             _machinegun.Reload(UpdateAmmoProgressBar);
-            //_currentMagazineCount = MagazineSize;
-            //_ammoProgressBar.Value = MagazineSize;
         }
         
         if (velocity.Length() > 0) velocity = velocity.Normalized() * PlayerSpeed;
@@ -76,8 +71,6 @@ public partial class Player : CharacterBody2D {
 
         if (Input.IsActionPressed("shoot_primary")) {
             _machinegun.Fire(DecrementAmmoProgressBar);
-            //animatedSprite2D.Animation = "shoot";
-           // if (_canFire && _currentMagazineCount > 0) _Shoot();
         }
         if (Input.IsActionJustReleased("aim_selection")) {
            _machinegun.ToogleHolster();
