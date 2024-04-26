@@ -9,7 +9,7 @@ public partial class Machinegun : Area2D {
 
 	[Export] public PackedScene ProjectileScene { get; set; }
 	[Export] public bool isHolstered = true;
-	[Export] public int MuzzleSpeed = 450;
+	[Export] public int MuzzleSpeed = 700;
 	[Export] public double FireRate = 0.1;
     [Export] public int MagazineSize = 32;
 	[Export] public double ReloadTime = 1.8;

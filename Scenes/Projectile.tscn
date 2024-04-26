@@ -38,6 +38,7 @@ contact_monitor = true
 script = ExtResource("1_ilx5i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_kbbyj")
 animation = &"move_2"
 frame_progress = 0.545453
@@ -45,7 +46,7 @@ frame_progress = 0.545453
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-0.212375, -0.0343093)
 rotation = 1.5708
-scale = Vector2(2.21786, 3.48978)
+scale = Vector2(0.7, 0.7)
 polygon = PackedVector2Array(-1.10497, 1.9393, 1.14622, 1.93176, 1.15805, -1.16306, 0.0442989, -1.88594, -1.08129, -1.18564)
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
